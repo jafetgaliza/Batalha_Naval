@@ -12,16 +12,16 @@ public class TestesTabuleiro extends Tabuleiro{
 	
 	@Test
 	public void tamanhoTabuleiro(){
-		//Tabuleiro t = new Tabuleiro();
+		Tabuleiro t = new Tabuleiro();
 		try{
-			criarJogo(2,3);
+			t.criarJogo(20,10);
 			}catch(MeuErro erro){
-				throw erro;
+				erro.printStackTrace();
 		}
 		
+		assertEquals([20][10], t.getTabuleiro());
 		
-		//assertEquals(20, t.getLargura());
-		//assertEquals(10, t.getAltura());
-	}
 
+	}
+	
 }

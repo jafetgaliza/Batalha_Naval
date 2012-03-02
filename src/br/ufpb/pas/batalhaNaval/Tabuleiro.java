@@ -1,11 +1,22 @@
 package br.ufpb.pas.batalhaNaval;
 
 public class Tabuleiro {
+	private int[][] tabuleiro; 
+	private int QuantidadeDeBarcos = 0;
+	private static final int MIN_LAG = 2;
+	private static final int MIN_COMP = 2;
 	private int largura;
-	private int altura;
-	private int QuantidadeDeBarcos;
+	private int comprimento;
 	
 	public Tabuleiro(){
+		this.setLargura(MIN_LAG);
+		this.setComprimento(MIN_COMP);
+		this.tabuleiro = new int[MIN_LAG][MIN_COMP];
+	}
+	public Tabuleiro(int lag, int comp){
+		this.setLargura(lag);
+		this.setComprimento(comp);
+		this.tabuleiro = new int[lag][comp];
 	}
 	public int getLargura() {
 		return largura;
@@ -13,21 +24,31 @@ public class Tabuleiro {
 	public void setLargura(int largura) {
 		this.largura = largura;
 	}
-	public int getAltura() {
-		return altura;
+	public int getComprimento() {
+		return comprimento;
 	}
-	public void setAltura(int altura) {
-		this.altura = altura;
+	public void setComprimento(int comprimento) {
+		this.comprimento = comprimento;
 	}
-	public void criarJogo(int largura, int altura) throws MeuErro{
-		this.largura = largura;
-		this.altura = altura;
-		if (largura < 2 || altura < 2){
+	public int getQuantidadeDeBarcos() {
+		return QuantidadeDeBarcos;
+	}
+	public void setQuantidadeDeBarcos(int quantidadeDeBarcos) {
+		QuantidadeDeBarcos = quantidadeDeBarcos;
+	}
+	public int[][] getTabuleiro() {
+		return tabuleiro;
+	}
+	public void setTabuleiro(int[][] tabuleiro) {
+		this.tabuleiro = tabuleiro;
+	}
+	public void criarJogo(int largura, int comprimento) throws MeuErro{
+		
+		
+		if (largura < MIN_LAG || comprimento < MIN_COMP)
 			throw new MeuErro("Largura e Altura devem ser maiores que 2");
-		}if(largura < 0 || altura < 0){
-	
+		else{
+		int[][] t = new int[20][10];
 		}
-	
-	
-}
+	}
 }
